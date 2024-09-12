@@ -2,12 +2,15 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '@/app/lib/productSlice';
 import './allproduct.css';
+import Link from 'next/link';
+import { Router } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 export default function AllProducts() {
   const { loading, products, error } = useSelector(state => state.productSlice);
   const dispatch = useDispatch();
   const [hasInteracted, setHasInteracted] = useState(false);
-
+  const router = useRouter()
   useEffect(() => {
     if (!products) {
       dispatch(fetchProducts());
@@ -42,14 +45,17 @@ console.log(products);
   };
 
   const productItems = products || [];
-
+const handleSelect=(id)=>{
+router.push(`/Product/${id}`)
+}
   return (
     <div className="allProduct-container">
       {loading && <p>Loading...</p>}
       {error && <p>Error loading products</p>}
       <div className="product-grid">
         {productItems.map((product) => (
-          <div key={product.id} className="product-box" onMouseEnter={handleMouseOver}>
+          <div key={product.id} className="product-box" onMouseEnter={handleMouseOver}
+          onClick={()=>handleSelect(product.id)}>
             <img src={product.images[0]} className="product-view-img" alt={product.title} />
             <div className="pur-btn">
               <div className="productName">{`${product.title.length>15?product.title.slice(0,15)+"...":product.title}`}</div>

@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchProducts } from "../lib/productSlice";
 import "./dashboard.css";
+import Homeview from "@/components/Homeview";
 
 export default function Dashboard() {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ export default function Dashboard() {
       </div>
       <div className="product-view">
         <AllProducts />
+       
       </div>
       <div className="sort-section">
       <h2 className="text-[#9b9b9b] text-m">Sort</h2>

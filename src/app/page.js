@@ -1,9 +1,9 @@
 "use client"
-import Autoscroll from "../components/autoscroll";
-import Homeview from "../components/Homeview"
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchProducts } from "./lib/productSlice";
+import Homeview from "../components/Homeview";
+import Autoscroll from "../components/Autoscroll";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -12,9 +12,8 @@ export default function Home() {
 }, [dispatch]);
   return (
    <div className="main-page kanit-semibold p-2 ">
- 
-  <Homeview/>
-  <Autoscroll/>
+ <Homeview/>
+ <Autoscroll/>
    </div>
   );
 }
