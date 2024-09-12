@@ -1,0 +1,132 @@
+.scroll {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    scrollbar-width: 10rem;
+}
+
+.marquee-container {
+    display: flex;
+    align-items: center;
+    width: 90vw;
+    height: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0 2rem;
+    box-sizing: content-box;
+    margin-bottom: 2rem;
+    white-space: nowrap;
+    scroll-behavior: smooth; 
+}
+
+
+.marquee-content {
+    display: flex;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.marquee-item {
+    flex: 0 0 auto;
+    width: 30vw;
+    height: 18vw;
+    background-color: black;
+    border: transparent;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.marqueebox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.mimg-container {
+    width: 65%;
+    height: 100%;
+    transform: scale(1);
+    transition: transform 0.5s ease-in-out;
+    position: absolute;
+    z-index: 1;
+}
+
+.marquee-item:hover .mimg-container {
+    transform: scale(1.1);
+}
+
+.mshoppingName {
+    position: absolute;
+    top: 70%;
+    right: 2rem;
+    min-width: 11rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border: #3a3a3a 0.1rem solid;
+    border-radius: 22px;
+    backdrop-filter: blur(3px);
+    z-index: 2;
+    color: #fff;
+}
+
+.mshoppingProduct {
+    flex: 1;
+    width: 100%;
+    margin-left: 0.5rem;
+    text-align: center;
+}
+
+.mshopingRate {
+    border: solid transparent 0.1rem;
+    border-radius: 22px;
+    padding: 0.5rem 1.2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2563ea;
+    color: #fff;
+}
+
+.marquee-item:hover {
+    border: solid 0.1rem #2563ea;
+}
+
+.marquee-container::-webkit-scrollbar {
+    height: 0.5rem;
+    width: 50%;
+}
+
+.marquee-container::-webkit-scrollbar-thumb {
+    background-color: rgb(110, 110, 110);
+    border-radius: 8px;
+   
+}
+
+.marquee-container::-webkit-scrollbar-track {
+    background-color: #202020;
+    border-radius: 8px;
+}
+
+
+
+@media (max-width: 950px) {
+    .marquee-item {
+        width: 45vw;
+        height: 25vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .marquee-item {
+        width: 95vw;
+        height: 50vw;
+    }
+}

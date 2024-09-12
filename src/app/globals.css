@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -9,7 +9,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background:#171717;
     --foreground: #ededed;
   }
 }
@@ -24,4 +24,13 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+.kanit-semibold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.main-page{
+  overflow: hidden;
+  color: #f6f8f9;
 }

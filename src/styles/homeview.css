@@ -1,0 +1,119 @@
+.home-view-container{
+    display: flex; 
+    width: 100vw;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.col1,.col2{
+    height: auto;
+}
+.box1{
+    max-width: 650px;
+    height:auto;
+    padding: 5rem;
+
+}
+.col2{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+.box2, .box3{
+    max-width: 320px;
+    height: 40%;
+    padding: 1rem;
+    
+}
+
+.box{
+    background-color: #000000;
+    border: transparent;
+    border-radius: 16px;
+    position:relative;
+    z-index: 1;
+}
+.box:hover{
+    border:0.1rem solid #2563ea
+}
+.shopingName{
+    min-width: 11rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    border: #3a3a3a 0.1rem solid;
+    padding:0.1rem;
+   
+    border-radius: 22px;
+    position: absolute;
+    z-index: 2;
+    backdrop-filter: blur(20px);
+    top: 80%;
+   
+}
+.shoppingProduct{
+    width: 100%;
+    margin-left: .5rem;
+   text-align: center;
+   
+}
+.shopingRate{
+    border:solid transparent 0.1rem;
+    align-content: flex-end;
+    border-radius: 22px;
+    padding:0rem 1.2rem;
+     height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#2563ea;
+    
+}
+.shopingName:hover{
+    cursor: pointer;
+}
+
+.img-container {
+    transform: scale(1); 
+    transition: transform 0.5s ease-in-out; 
+}
+
+.box:hover .img-container {
+    transform: scale(1.2); 
+}
+
+@media(max-width:950px){
+    .box1{
+        max-width: 500px;
+        height:auto;
+    
+    }
+    .box2, .box3{
+        max-width: 250px;
+        height: 45%;
+        
+    }
+}
+@media(max-width:600px){
+    .home-view-container{
+        display: flex; 
+     
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    .col2{
+     width: 100vw;
+    }
+    .box2, .box3,.box1{
+        max-width: 90vw;
+    }
+    .col1{
+        margin-left: -40px;
+    }
+    
+}
