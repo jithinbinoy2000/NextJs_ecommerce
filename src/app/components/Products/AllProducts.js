@@ -31,7 +31,7 @@ console.log(products);
   const handleMouseOver = async () => {
     if (!hasInteracted) return; 
 
-    const audio = new Audio('/audios/choose.mp3');
+    const audio = new Audio('/audios/choose.wav');
     if (!audio.paused) {
       audio.pause();
       audio.currentTime = 0; 

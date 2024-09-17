@@ -1,8 +1,7 @@
 .product-container{
     max-width: 1600px;
-    max-height: 900px;
     width: 70vw;
-    height: 85vh;
+    height: 70vh;
     display: grid;
     grid-template-columns:1fr 1fr;
     background-color: black;
@@ -40,4 +39,11 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
         }
+}
+@media(max-width:980px){
+    .product-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 100%;
+    }
 }

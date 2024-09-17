@@ -15,7 +15,7 @@ export default function Autoscroll() {
         return <div>Loading...</div>;
     }
     
-    const scrollProducts = allProducts ? allProducts.slice(-8) : [];
+    const scrollProducts = allProducts ? allProducts.slice(-25) : [];
 
     return (
         <div className="scroll">

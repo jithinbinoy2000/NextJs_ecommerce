@@ -3,7 +3,8 @@ import { useEffect } from 'react'
 import './product.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProducts, findSelectedProduct } from '@/app/lib/productSlice'
-import Autoscroll from '../../../components/Autoscroll'
+import Autoscroll from '@/app/components/Autoscroll'
+
 
 export default function Product({ params }) {
     const dispatch = useDispatch()
@@ -34,7 +35,7 @@ export default function Product({ params }) {
             <div className='details'>
                 {selectedProduct ? (
                     <div>
-                        <h1 className='text-5xl font-medium text-white'>{selectedProduct.title}</h1>
+                        <h1 className='text-3xl font-medium text-white'>{selectedProduct.title}</h1>
                         <div className='flex items-center  justify-around'>
                         <div className='w-2/5 border-transparent rounded-3xl bg-[#2563ea] text-center p-2 text-l font-bold mt-3 mb-2'>
                             ${selectedProduct.price} USD
@@ -73,7 +74,7 @@ export default function Product({ params }) {
                        
                         </div>
                         
-                        <div className=' flex items-center p-2 bg-[#2563ea] w-1/2 justify-center text-xl gap-2 rounded-3xl py-1 mt-2 font-bold'>
+                        <div className=' flex items-center p-1 bg-[#2563ea] w-50 justify-center text-xl gap-2 rounded-3xl py-1 mt-2 font-bold'>
                             <div>+</div>
                             <div> Add To cart</div>
                         </div>
