@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import '../styles/homeview.css';
+import '../styles/homeview.css'
 import { useRouter } from "next/navigation";
 import Header from "./header";
 
@@ -31,9 +31,9 @@ export default function Homeview() {
                             <div className="img-container">
                                 <img src={allProducts[30]?.images[0]} alt={allProducts[30]?.title} style={{ scale: '1.3' }} />
                             </div>
-                            <div className="shoppingName">
-                                <div className="shoppingProduct text-sm">{allProducts[30]?.title}</div>
-                                <div className="shoppingRate">${allProducts[30]?.price}</div>
+                            <div className="pur-container">
+                                <div className="pur-titile text-sm">{allProducts[30]?.title}</div>
+                                <div className="pur-rate">${allProducts[30]?.price}</div>
                             </div>
                         </div>
                     )}
@@ -44,9 +44,9 @@ export default function Homeview() {
                             <div className="img-container">
                                 <img src={allProducts[31]?.images[0]} alt={allProducts[31]?.title} />
                             </div>
-                            <div className="shoppingName">
-                                <div className="shoppingProduct">{allProducts[31]?.title}</div>
-                                <div className="shoppingRate">${allProducts[31]?.price}</div>
+                            <div className="pur-container">
+                                <div className="pur-titile">{allProducts[31]?.title}</div>
+                                <div className="pur-rate">${allProducts[31]?.price}</div>
                             </div>
                         </div>
                     )}
@@ -55,9 +55,9 @@ export default function Homeview() {
                             <div className="img-container">
                                 <img src={allProducts[32]?.images[0]} alt={allProducts[32]?.title} />
                             </div>
-                            <div className="shoppingName">
-                                <div className="shoppingProduct">{allProducts[32]?.title}</div>
-                                <div className="shoppingRate">${allProducts[32]?.price}</div>
+                            <div className="pur-container">
+                                <div className="pur-titile">{allProducts[32]?.title}</div>
+                                <div className="pur-rate">${allProducts[32]?.price}</div>
                             </div>
                         </div>
                     )}

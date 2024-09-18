@@ -10,7 +10,8 @@
     height: auto;
 }
 .box1{
-    max-width: 650px;
+
+    max-width: 640px;
     height:auto;
     padding: 5rem;
 
@@ -35,32 +36,34 @@
     z-index: 1;
 }
 .box:hover{
-    border:0.1rem solid #2563ea
+    border:0.1rem solid #2563ea;
+    cursor: pointer;
 }
-.shopingName{
+.pur-container{
+   
     min-width: 11rem;
     height: 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    border: #3a3a3a 0.1rem solid;
+    border: #3a3a3a6c 0.1rem solid;
     padding:0.1rem;
-   
     border-radius: 22px;
     position: absolute;
     z-index: 2;
     backdrop-filter: blur(20px);
     top: 80%;
    
+   
 }
-.shoppingProduct{
+.pur-titile{
     width: 100%;
     margin-left: .5rem;
    text-align: center;
    
 }
-.shopingRate{
+.pur-rate{
     border:solid transparent 0.1rem;
     align-content: flex-end;
     border-radius: 22px;
