@@ -6,6 +6,7 @@ import "./dashboard.css";
 
 import AllProducts from "../components/Products/AllProducts";
 import Mainheader from "../components/mainheader";
+import ChatBotAssistant from "../components/ChatBotAssistant";
 
 export default function Dashboard() {
   const dispatch = useDispatch();
@@ -73,6 +74,10 @@ export default function Dashboard() {
             ))}
           </ul>
         </div>
+        <div style={{position:"absolute", zIndex:'2'}}>
+        <ChatBotAssistant/>
+        </div>
+       
       </div>
     </>
   );
