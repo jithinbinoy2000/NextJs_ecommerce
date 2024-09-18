@@ -4,11 +4,16 @@ import './product.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProducts, findSelectedProduct } from '@/app/lib/productSlice'
 import Autoscroll from '@/app/components/Autoscroll'
+import Header from '@/app/components/header'
+
+import { addToCart, removeFromCart } from '@/app/lib/cartSlice'
 
 
 export default function Product({ params }) {
     const dispatch = useDispatch()
     const { loading, products, error, selectedProduct } = useSelector((state) => state.productSlice)
+    const {cart} = useSelector((state)=>state.cartSlice);
+
     useEffect(() => {
         dispatch(fetchProducts())
     }, [dispatch])
@@ -18,10 +23,23 @@ export default function Product({ params }) {
         }
     }, [loading, error, products, params.id, dispatch])
 
-    console.log('Selected Product:', selectedProduct);
+    // console.log('Selected Product:', selectedProduct);
+    const handleAddCart  = (id) => {
+        // console.log(id);
+        dispatch(addToCart(id))
+        alert("Cart Updated")
+        
+    }
+    const handleRemoveCart= (id)=>{
+       
+        dispatch(removeFromCart(id))
+        alert('Item Rmoved From Cart')
+    }
+const isInCart = cart.find(item=>item.id === selectedProduct.id)
 
     return (
         <div className="product">
+          <Header/>
         <div className='product-container mt-5'>
             <div className='view'>
                 <div className='img-container'>
@@ -74,9 +92,11 @@ export default function Product({ params }) {
                        
                         </div>
                         
-                        <div className=' flex items-center p-1 bg-[#2563ea] w-50 justify-center text-xl gap-2 rounded-3xl py-1 mt-2 font-bold'>
-                            <div>+</div>
-                            <div> Add To cart</div>
+                        <div className=' flex items-center bg-[#2563ea] w-50  justify-center text-xl gap-2 rounded-3xl py-1 mt-2 font-bold hover:bg-[#2375f0] cursor-pointer'>
+                            {/* <div>+</div> */}
+                            <div className='' onClick={!isInCart?()=>handleAddCart(selectedProduct.id):()=>handleRemoveCart(selectedProduct.id)} >
+                               {isInCart?"Remove From Cart":"Add To Cart"}
+                                </div>
                         </div>
                     </div>
                 ) : loading ? ( 
