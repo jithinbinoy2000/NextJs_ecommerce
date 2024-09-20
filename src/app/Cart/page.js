@@ -36,6 +36,9 @@ dispatch(decrementCart(id))
     const handleDelete =()=>{
         console.log("delete");
     }
+const handleCheckout =()=>{
+    router.push("/Cart/Payment")
+}
     
 
     return (
@@ -84,7 +87,7 @@ dispatch(decrementCart(id))
                 {/*  */}
             </div>{
                 cart.length>0 && 
-                <div className=" border border-transparent  rounded-md mt-2 cursor-pointer p-3 bg-[#2159d4]">Proceed To CheckOut</div> 
+                <div className=" border border-transparent  rounded-md mt-2 cursor-pointer p-3 bg-[#2159d4]" onClick={()=>handleCheckout()}>Proceed To CheckOut</div> 
             }
            
         </div>
