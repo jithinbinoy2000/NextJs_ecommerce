@@ -9,6 +9,7 @@ import { PayPalButtons } from "@paypal/react-paypal-js";
 
 export default function Cart() {
     const [cartItem, setCartItems] = useState([]);
+
     const router = useRouter();
     const dispatch = useDispatch()
     

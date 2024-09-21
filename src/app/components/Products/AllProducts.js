@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts } from '@/app/lib/productSlice';
+import { fetchProducts } from '../../lib/productSlice';
 import './allproduct.css';
-import Link from 'next/link';
-import { Router } from 'next/router';
 import { useRouter } from 'next/navigation';
 
 export default function AllProducts() {
@@ -16,7 +14,7 @@ export default function AllProducts() {
       dispatch(fetchProducts());
     }
   }, [products, dispatch]);
-console.log(products);
+// console.log(products);
 
   useEffect(() => { 
     const handleUserInteraction = () => {

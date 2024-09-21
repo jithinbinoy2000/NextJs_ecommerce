@@ -34,3 +34,15 @@ body {
   overflow: hidden;
   color: #f6f8f9;
 }
+.successPayment {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1); /* Start and end at original size */
+  }
+  50% {
+    transform: scale(1.2); /* Scale up at the middle of the animation */
+  }
+}

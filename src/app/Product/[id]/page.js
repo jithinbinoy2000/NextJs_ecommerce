@@ -2,11 +2,12 @@
 import { useEffect } from 'react'
 import './product.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchProducts, findSelectedProduct } from '@/app/lib/productSlice'
-import Autoscroll from '@/app/components/Autoscroll'
-import Header from '@/app/components/header'
 
-import { addToCart, removeFromCart } from '@/app/lib/cartSlice'
+import { fetchProducts, findSelectedProduct } from '../../lib/productSlice'
+import Autoscroll from '../../components/Autoscroll'
+import Header from '../../components/header'
+
+import { addToCart, removeFromCart } from '../../lib/cartSlice'
 
 
 export default function Product({ params }) {

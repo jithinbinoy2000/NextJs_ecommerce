@@ -42,7 +42,7 @@ const confirmError = await stripe.confirmPayment({
     elements,
     clientSecret,
     confirmParams:{
-        return_url:"http://localhost:3000/Cart"
+        return_url:"http://localhost:3000/Cart/Payment/SuccessPayment"
     }
 })
 console.log("confirm",confirmError);
