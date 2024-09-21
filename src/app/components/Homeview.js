@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import '../styles/homeview.css'
 import { useRouter } from "next/navigation";
 import Header from "./header";
+import Image from "next/image";
 
 export default function Homeview() {
     const { loading, products, error } = useSelector((state) => state.productSlice);
@@ -16,7 +17,9 @@ export default function Homeview() {
         }
     }, [products]);
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <div className="w-full h-[50vw] flex justify-center items-center">
+        <Image src={"/images/loading.png"} width={40} height={100} alt="Loading..." className="loading"/>
+    </div>;
     if (error) return <div>Error: {error}</div>;
 
     const lastFiveProducts = allProducts.slice(-5);

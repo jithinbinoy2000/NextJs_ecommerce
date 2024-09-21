@@ -37,7 +37,26 @@ body {
 .successPayment {
   animation: pulse 2s ease-in-out infinite;
 }
-
+.loading{
+  animation: rotate 3s infinite;
+}
+@keyframes rotate{
+  0% {
+   transform: rotate(0deg) ;
+  }
+  25%{
+    transform: rotate(90deg) ;
+  }
+  50% {
+    transform: rotate(180deg) ;
+  }
+  75%{
+    transform: rotate(270deg) ;
+  }
+  100%{
+    transform: rotate(360deg) ;
+  }
+}
 @keyframes pulse {
   0%, 100% {
     transform: scale(1); /* Start and end at original size */

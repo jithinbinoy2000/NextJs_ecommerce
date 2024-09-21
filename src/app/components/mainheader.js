@@ -20,8 +20,8 @@ export default function Mainheader (){
       router.push('/Cart')
     }
     return(
-        <div className="w-full h-[auto] flex justify-around p-3">
-      <div className="left flex  items-center justify-center">
+        <div className="w-full h-[auto] flex justify-between p-3">
+      <div className="left flex  items-center justify-center hover:cursor-pointer" onClick={()=>{router.push("/")}}>
         <Image src='/images/shopping-bag.png' height={100} width={25} alt="Logo" />
         <div>Ecom</div>
        
@@ -30,7 +30,7 @@ export default function Mainheader (){
       <input
         type="text"
         placeholder="Search Products..."
-        className="bg-transparent  min-w-[1/2] h-[2rem] p-2 border-2 border-[#262626] rounded-md focus:border border-5"
+        className="bg-transparent  min-w-[1/2] h-[2rem] p-2 border-2 border-[#979797] rounded-md focus:border border-5 sm:max-w-[20rem] md:min-w-[20rem]"
         onChange={handleSearch}
       />
       </div>
@@ -40,8 +40,10 @@ export default function Mainheader (){
         {session ? (
           <div className="flex   items-center gap-3">
           <div className="flex flex-col relative border-transparent  p-2" onClick={()=>hnadleCartNav()}>
-           <div className="text-sm font-light absolute z-0 bottom-5 left-5 w-3 h-3 rounded-full flex justify-center items-center p-2 bg-red-500">{cart.length}</div>
-            <Image src={'/images/carts.png'} width={20} height={100} alt="Cart" className="z-1"/>
+           <div className="text-sm font-light absolute z-0 bottom-7 left-6 w-3 h-3 rounded-full flex justify-center items-center p-2 bg-red-500">{cart.length}</div>
+           <div className="w-7 h-7 rounded-full bg-white flex justify-center items-center hover:cursor-pointer">
+           <Image src={'/images/carts.png'} width={20} height={100} alt="Cart" className="z-1"/>
+          </div>
             
            </div>
            
