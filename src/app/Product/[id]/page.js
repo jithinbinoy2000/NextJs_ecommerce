@@ -94,9 +94,10 @@ const isInCart = cart.find(item=>item.id === selectedProduct.id)
                        
                         </div>
                         
-                        <div className=' flex items-center bg-[#2563ea] w-50  justify-center text-lg gap-2 rounded-3xl py-1 mt-2 font-bold hover:bg-[#2375f0] cursor-pointer'>
+                        
                             {/* <div>+</div> */}
                             <div className='p-2' onClick={!isInCart?()=>handleAddCart(selectedProduct.id):()=>handleRemoveCart(selectedProduct.id)} >
+                            <div className=' flex items-center bg-[#2563ea] w-50  justify-center text-lg gap-2 rounded-3xl py-1 mt-2 font-bold hover:bg-[#2375f0] cursor-pointer'>
                                {isInCart?"Remove From Cart":"Add To Cart"}
                                 </div>
                         </div>

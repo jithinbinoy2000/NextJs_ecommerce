@@ -49,7 +49,7 @@
               <CheckOutPage amount={amount} />
             </Elements>
           </div>
-        ) :<div className="flex flex-col items-center"><span>Somethong Wrong Please Try Again</span>
+        ) :<div className="flex flex-col items-center">
           <Link href={"/Dashboard"} className="border border-white p-1 rounded-md">Go to Home</Link>
           </div>}
       </div>
