@@ -70,9 +70,9 @@ export default function Cart() {
             cartItem.map((item) => (
               <div
                 key={item.id}
-                className="cart-item mb-2 rounded-md bg-black px-5 p-5 flex gap-10 justify-between items-center flex-wrap"
+                className="cart-item mb-2 rounded-xl bg-black px-5 p-5 flex gap-10 justify-between items-center flex-wrap"
               >
-                <div className="bg-[#ffffff] rounded-md hover:border-2 border-blue-600">
+                <div className="bg-[#ffffffd8] rounded-md hover:border-2 border-blue-600">
                   <img
                     src={item.images[0]}
                     width={150}
