@@ -17,7 +17,7 @@ const CheckOutPage = ({ amount }) => {
 
     const placeOrder = async () => {
         try {
-            const response = await fetch('http://localhost:8000/placeorder', {
+            const response = await fetch('https://next-ecommerce-server-main.onrender.com/placeorder', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json', // Fixed typo
