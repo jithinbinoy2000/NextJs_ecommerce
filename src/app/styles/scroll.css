@@ -34,7 +34,7 @@
     gap: 0.5rem;
     padding-top: 1rem;
     margin-bottom: 1rem;
-    animation: marquee 100s linear infinite;
+    animation: marquee 200s linear infinite;
     will-change: transform;
 }
 

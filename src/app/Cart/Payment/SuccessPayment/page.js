@@ -15,6 +15,6 @@ export default function SuccessPayment(){
       <button className=" p-2 bg-[#3eb655] rounded-md mt-2 text-lg font-semibold hover:bg-[#1e662c]">Continue Shopping</button>
       </Link>
       </div>
-        </div>
+      </div>
     )
 }

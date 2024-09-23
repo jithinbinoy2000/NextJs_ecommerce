@@ -48,7 +48,7 @@ const isInCart = cart.find(item=>item.id === selectedProduct.id)
                     {selectedProduct?.images?.length > 0 ? (
                         <img src={selectedProduct.images[0]} alt={selectedProduct.title} />
                     ) : <div className='flex  justify-center align-center'>
-                        <Image src={"/images/loading.png"} width={40} height={100} alt="Loading..." className="loading"/>
+                        <Image src={"/images/loading.png"}  width={40} height={100} alt="Loading..." className="loading" />
                     </div> }
                 </div>
             </div>
