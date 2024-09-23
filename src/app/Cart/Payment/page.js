@@ -36,7 +36,7 @@
         <Address onDataChange={setAddressValid} onTouched = {setTouched}/>
 
         {addressValid && touched  && amount>0 ?  (
-          <div className="bg-white w-[25rem] flex justify-center items-center flex-col p-5 rounded-2xl">
+          <div className="bg-white md:w-[40rem] flex justify-center items-center flex-col p-5 rounded-2xl sm:w-auto">
             <div className="text-black text-lg">Amount To Pay: &#58; {amount}</div>
             <Elements
               stripe={stripePromise}

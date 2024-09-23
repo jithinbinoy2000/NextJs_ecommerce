@@ -80,7 +80,7 @@ const CheckOutPage = ({ amount }) => {
     
 
     return (
-        <form onSubmit={handleSubmit} className="bg-grey-100 p-5 rounded-lg flex flex-col justify-center items-center">
+        <form onSubmit={handleSubmit} className="bg-grey-100 p-5 rounded-lg flex flex-col justify-center items-center ">
             {clientSecret && <PaymentElement />}
             {errorMessage && <div style={{ color: "red" }}>{errorMessage}</div>}
             <button className="border text-white border-transparent bg-black rounded-lg p-2 w-40 text-xl font-bold mt-3 hover:cursor-pointer">
