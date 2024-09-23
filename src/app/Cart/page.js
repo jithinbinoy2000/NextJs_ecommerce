@@ -135,7 +135,7 @@ export default function Cart() {
           {/* Total Price Display */}
           {cart.length > 0 && (
             <div className="mt-4 text-lg font-semibold">
-              Total Price: $ {totalPrice}
+              Total Price: $ {Math.round(totalPrice*100)/100}
             </div>
           )}
 
