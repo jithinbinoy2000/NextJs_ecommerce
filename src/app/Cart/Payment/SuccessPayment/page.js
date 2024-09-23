@@ -1,8 +1,11 @@
-
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 
+
 export default function SuccessPayment(){
+
+  
     
     return(
         <div className="w-full h-[100vh] flex justify-center items-center">

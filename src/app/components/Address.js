@@ -3,8 +3,11 @@
 import { useFormik } from "formik";
 import addressValidation from '../lib/addressValidation';
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setAddress, setEmail } from "../lib/paymentSlice";
 
 export default function Address({ onDataChange, onTouched }) {
+  const dispatch = useDispatch()
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -17,7 +20,10 @@ export default function Address({ onDataChange, onTouched }) {
     },
     validationSchema: addressValidation,
     onSubmit: (values) => {
-    //   console.log(values); 
+      // console.log(values);
+      dispatch(setAddress(values))
+      dispatch(setEmail(values.email))
+      
     },
   });
 
@@ -119,10 +125,12 @@ export default function Address({ onDataChange, onTouched }) {
               <span className="text-red-500 text-sm font-extralight">{formik.touched.zipcode && formik.errors.zipcode}</span>
             </div>
           </div>
-
-          {/* <button type="submit" className="mt-4 p-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+        <div className="w-full flex justify-center">
+        <button type="submit" className="mt-4 p-2 bg-blue-600 j text-white rounded hover:bg-blue-700">
             Continue to Shipping
-          </button> */}
+          </button>
+        </div>
+         
         </div>
       </form>
     </div>

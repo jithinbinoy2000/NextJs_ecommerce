@@ -7,7 +7,7 @@ export async function POST(request) {
     if (!amount || isNaN(amount) || amount <= 0) {
       throw new Error("Invalid amount provided");
     }
-    console.log("API call amount is", amount);
+    // console.log("API call amount is", amount);
     const paymentIntent = await stripe.paymentIntents.create({
       amount: parseInt(amount), // Ensure amount is an integer
       currency: "usd",

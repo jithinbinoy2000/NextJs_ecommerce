@@ -17,6 +17,7 @@ export default function Cart() {
 
   const { products } = useSelector((state) => state.productSlice);
   const { cart } = useSelector((state) => state.cartSlice);
+  
 
   useEffect(() => {
     if (cart.length > 0 && products.length > 0) {
