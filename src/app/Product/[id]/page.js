@@ -8,6 +8,7 @@ import Autoscroll from '../../components/Autoscroll'
 import Header from '../../components/header'
 
 import { addToCart, removeFromCart } from '../../lib/cartSlice'
+import Image from 'next/image'
 
 
 export default function Product({ params }) {
@@ -46,17 +47,17 @@ const isInCart = cart.find(item=>item.id === selectedProduct.id)
                 <div className='img-container'>
                     {selectedProduct?.images?.length > 0 ? (
                         <img src={selectedProduct.images[0]} alt={selectedProduct.title} />
-                    ) : (
-                        'Image Not Available'
-                    )}
+                    ) : <div className='flex  justify-center align-center'>
+                        <Image src={"/images/loading.png"} width={40} height={100} alt="Loading..." className="loading"/>
+                    </div> }
                 </div>
             </div>
             <div className='details'>
                 {selectedProduct ? (
                     <div>
                         <h1 className='text-3xl font-medium text-white'>{selectedProduct.title}</h1>
-                        <div className='flex items-center  justify-around'>
-                        <div className='w-2/5 border-transparent rounded-3xl bg-[#2563ea] text-center p-2 text-l font-bold mt-3 mb-2'>
+                        <div className='flex items-center  justify-between'>
+                        <div className='w-1/5 border-transparent rounded-xl bg-[#2563ea] text-center p-2 text-l font-bold mt-3 mb-2'>
                             ${selectedProduct.price} USD
                         </div>
                        
@@ -71,8 +72,8 @@ const isInCart = cart.find(item=>item.id === selectedProduct.id)
                             <div>D: {selectedProduct.dimensions?.depth} cm</div>
                         </div>
                       
-                        <div className='text-medium  font-semibold mt-2'>Description</div>
-                        <p className='text-medium  mt-2'>{selectedProduct.description}</p>
+                        <div className='text-medium  font-semibold mt-2 '>Description</div>
+                        <p className='text-medium  mt-2 max-w-[35rem]'>{selectedProduct.description}</p>
                         <div className='sub-details'>   
                         <div className='mt-2'>
                         <div className='text-l font-semibold mt-2'>Category</div>
@@ -101,7 +102,10 @@ const isInCart = cart.find(item=>item.id === selectedProduct.id)
                         </div>
                     </div>
                 ) : loading ? ( 
-                    <p>Loading...</p>
+                    <div className='flex  justify-center items-center'>
+ <Image src={"/images/loading.png"} width={10} height={100} alt="Loading..." className="loading"/>
+                    </div>
+                   
                 ) : error ? (
                     <p>Error: {error}</p>
                 ) : (

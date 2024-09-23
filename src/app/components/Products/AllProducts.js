@@ -46,22 +46,46 @@ export default function AllProducts() {
 const handleSelect=(id)=>{
 router.push(`/Product/${id}`)
 }
-  return (
-    <div className="allProduct-container">
-      {loading && <p>Loading...</p>}
-      {error && <p>Error loading products</p>}
-      <div className="product-grid">
-        {productItems.map((product) => (
-          <div key={product.id} className="product-box" onMouseEnter={handleMouseOver}
-          onClick={()=>handleSelect(product.id)}>
-            <img src={product.images[0]} className="product-view-img" alt={product.title} />
-            <div className="pur-btn">
-              <div className="productName">{`${product.title.length>15?product.title.slice(0,15)+"...":product.title}`}</div>
-              <div className="Amount">${product.price}</div>
+return (
+  <div className="allProduct-container">
+    {loading && <p>Loading...</p>}
+    {error && <p>Error loading products</p>}
+    <div className="product-grid">
+      {productItems.length > 0 ? (
+        productItems.map((product) => 
+          product ? (
+            <div
+              key={product.id}
+              className="product-box"
+              onMouseEnter={handleMouseOver}
+              onClick={() => handleSelect(product.id)}
+            >
+              <img
+                src={product.images[0]}
+                className="product-view-img lazy-load"
+                alt={product.title}
+                loading='lazy'
+                onLoad={(e) => e.target.classList.add('loaded')}
+                
+              />
+            
+              <div className="pur-btn">
+                <div className="productName">
+                  {product.title.length > 15
+                    ? product.title.slice(0, 15) + "..."
+                    : product.title}
+                </div>
+                <div className="Amount">${product.price}</div>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ) : (
+            <div key={product.id}>No item</div>
+          )
+        )
+      ) : (
+        <p>No products available</p>
+      )}
     </div>
-  );
+  </div>
+);
 }

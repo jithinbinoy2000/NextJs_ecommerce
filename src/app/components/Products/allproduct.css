@@ -36,12 +36,14 @@
     z-index: 1;
     scale: 0.9;
     transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.5s ease-in-out;
 }
 
 .product-view-img {
     width: 70%;
     max-width: 20rem;
+
+  
 }
 .pur-btn{
     max-width: 12rem;
@@ -78,6 +80,20 @@
   transform: scale(1.2);
 
 }
+.product-view-img.lazy-load {
+    opacity: 0;
+    transform: scale(0.95); 
+   
+    animation: loading 2s ease-in-out;
+}
+
+.product-view-img.lazy-load.loaded {
+    opacity: 1;
+    transform: scale(1); 
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+    animation: none;
+}
+
 @media (max-width: 1430px) {
     .product-grid {
         grid-template-columns: repeat(3, 1fr); 

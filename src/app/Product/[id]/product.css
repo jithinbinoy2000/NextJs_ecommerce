@@ -1,11 +1,11 @@
 .product-container{
     max-width: 1600px;
-    width: 70vw;
+    width: 80vw;
     height: 70vh;
     display: grid;
     grid-template-columns:1fr 1fr;
     background-color: black;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
 }
 .view{
     display: flex;
