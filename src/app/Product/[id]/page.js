@@ -57,7 +57,7 @@ const isInCart = cart.find(item=>item.id === selectedProduct.id)
                     <div>
                         <h1 className='text-3xl font-medium text-white'>{selectedProduct.title}</h1>
                         <div className='flex items-center  justify-between'>
-                        <div className='w-1/5 border-transparent rounded-xl bg-[#2563ea] text-center p-2 text-l font-bold mt-3 mb-2'>
+                        <div className='w-1/5 min-w-40  border-transparent rounded-xl bg-[#2563ea] text-center py-2 text-l font-bold mt-3 mb-2'>
                             ${selectedProduct.price} USD
                         </div>
                        
@@ -97,7 +97,7 @@ const isInCart = cart.find(item=>item.id === selectedProduct.id)
                         
                             {/* <div>+</div> */}
                             <div className='p-2' onClick={!isInCart?()=>handleAddCart(selectedProduct.id):()=>handleRemoveCart(selectedProduct.id)} >
-                            <div className=' flex items-center bg-[#2563ea] w-50  justify-center text-lg gap-2 rounded-3xl py-1 mt-2 font-bold hover:bg-[#2375f0] cursor-pointer'>
+                            <div className=' flex items-center bg-[#2563ea] max-w-40  justify-center text-l gap-2  rounded-xl py-2 mt-2 font-bold hover:bg-[#2375f0] cursor-pointer'>
                                {isInCart?"Remove From Cart":"Add To Cart"}
                                 </div>
                         </div>

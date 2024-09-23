@@ -40,7 +40,7 @@ export default function Dashboard() {
         <div className="collection-section">
           <h2 className="text-[#9b9b9b] text-m">Collections</h2>
           <ul className="text-white font-lighter text-sm text-justify">
-            {['all', 'Cosmetics', 'Beauty', 'Groceries', 'Dress'].map((cat) => (
+            {['all', 'Beauty', 'Groceries',].map((cat) => (
               <li
                 key={cat}
                 className={`list ${category === cat ? 'active' : ''}`}
