@@ -9,12 +9,17 @@ import Header from '../../components/header'
 
 import { addToCart, removeFromCart } from '../../lib/cartSlice'
 import Image from 'next/image'
-
+import  { addToWishlist, removeFromWishlist } from '../../lib/wishlistSlice'
+import { useSession } from 'next-auth/react'
 
 export default function Product({ params }) {
+    const { data: session } = useSession();
     const dispatch = useDispatch()
-    const { loading, products, error, selectedProduct } = useSelector((state) => state.productSlice)
-    const {cart} = useSelector((state)=>state.cartSlice);
+    const { loading, products, error, selectedProduct } = useSelector((state) => state.productSlice);
+    const { cart } = useSelector((state) => state.cartSlice);
+    const wishlist = useSelector((state) => state.wishlist);
+    
+
 
     useEffect(() => {
         dispatch(fetchProducts())
@@ -37,7 +42,19 @@ export default function Product({ params }) {
         dispatch(removeFromCart(id))
         alert('Item Rmoved From Cart')
     }
+    const handleAddWishlist = (id)=>{
+        console.log("add");
+        
+        dispatch(addToWishlist(id))
+    }
+    const handleRemoveWishlist = (id)=>{
+        console.log("dele");
+        
+        dispatch(removeFromWishlist(id))
+    }
 const isInCart = cart.find(item=>item.id === selectedProduct.id)
+const isInWishList = wishlist.wishlist.find(item => item.id === selectedProduct?.id); 
+
 
     return (
         <div className="product">
@@ -46,8 +63,31 @@ const isInCart = cart.find(item=>item.id === selectedProduct.id)
             <div className='view'>
                 <div className='img-container'>
                     {selectedProduct?.images?.length > 0 ? (
-                        <img src={selectedProduct.images[0]} alt={selectedProduct.title} />
-                    ) : <div className='flex  justify-center align-center'>
+                       <div className="relative">
+                       <img src={selectedProduct.images[0]} alt={selectedProduct.title} className="w-full h-auto relative z-0"
+                        />
+                       <button className="w-10 h-10 flex justify-center items-center rounded-full p-2 bg-[#f3f3f3f6] bg-opacity-30 backdrop-blur-md hover:bg-opacity-75 cursor-pointer absolute bottom-[5rem] right-[5rem] z-1
+                       "  onClick={() => {
+                        if (session?.user) {
+                          !isInWishList
+                            ? handleAddWishlist(selectedProduct.id)
+                            : handleRemoveWishlist(selectedProduct.id);
+                        } else {
+                          alert('Please login to manage your wishlist');
+                        }
+                      }}>
+                       <Image 
+                                        src={isInWishList ? '/images/remove.png' : '/images/heart.png'} 
+                                        width={20} 
+                                        height={20} 
+                                        alt='Wishlist' 
+                                        className='add_wishlist' 
+                                    />
+                       </button>
+                     </div>
+                     
+                      
+                    ) : <div className='flex  justify-center align-center' > 
                         <Image src={"/images/loading.png"}  width={40} height={100} alt="Loading..." className="loading" />
                     </div> }
                 </div>
@@ -96,7 +136,17 @@ const isInCart = cart.find(item=>item.id === selectedProduct.id)
                         
                         
                             {/* <div>+</div> */}
-                            <div className='p-2' onClick={!isInCart?()=>handleAddCart(selectedProduct.id):()=>handleRemoveCart(selectedProduct.id)} >
+                            <div className='p-2' onClick={() => {
+                                    if (session?.user) {
+                                        if (!isInCart) {
+                                        handleAddCart(selectedProduct.id);
+                                        } else {
+                                        handleRemoveCart(selectedProduct.id);
+                                        }
+                                    } else {
+                                        alert('Please login to add to cart');
+                                    }
+                                    }}>
                             <div className=' flex items-center bg-[#2563ea] max-w-40  justify-center text-l gap-2  rounded-xl py-2 mt-2 font-bold hover:bg-[#2375f0] cursor-pointer'>
                                {isInCart?"Remove From Cart":"Add To Cart"}
                                 </div>
