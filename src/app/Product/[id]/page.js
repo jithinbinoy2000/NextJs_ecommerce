@@ -66,7 +66,7 @@ const isInWishList = wishlist.wishlist.find(item => item.id === selectedProduct?
                        <div className="relative">
                        <img src={selectedProduct.images[0]} alt={selectedProduct.title} className="w-full h-auto relative z-0"
                         />
-                       <button className="w-10 h-10 flex justify-center items-center rounded-full p-2 bg-[#f3f3f3f6] bg-opacity-30 backdrop-blur-md hover:bg-opacity-75 cursor-pointer absolute bottom-[5rem] right-[5rem] z-1
+                       <button className="w-10 h-10 flex justify-center items-center rounded-full p-2 bg-[#f3f3f3f6] bg-opacity-30 backdrop-blur-md hover:bg-opacity-75 cursor-pointer absolute bottom-[0.1rem] right-[0.1rem] z-1
                        "  onClick={() => {
                         if (session?.user) {
                           !isInWishList
