@@ -18,7 +18,7 @@ export async function POST(req) {
         case /shipping information|shipping status/.test(message.toLowerCase()):
           botReply = "For shipping information, please provide your order number. You can also check our 'Shipping Information' page for details.";
           break;
-        case /return|exchange|return policy/.test(message.toLowerCase()):
+        case /return|exchange|return policy|refund/.test(message.toLowerCase()):
           botReply = "To initiate a return or exchange, please visit our 'Returns and Exchanges' page. You can also contact our support team for further assistance.";
           break;
         case /payment methods|payment options/.test(message.toLowerCase()):
